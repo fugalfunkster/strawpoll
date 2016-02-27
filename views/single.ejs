@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="/views/css/style.css" rel="stylesheet" type="text/css">
+    <title>Name of the Poll</title>
+  </head>
+  <body>
+    <nav>
+      <a class="link" href="/login">Login</a>
+      <a class="link" href="/">Home</a>
+      <a class="link" href="/list">My Polls</a>
+    </nav>
+    <h1>Name of the Poll</h1>
+    <div class="visualization">
+    </div>
+    <ul class="listofoptions">
+      <li class="option">
+        <p>Option</p>
+        <button class="link" class="vote">VOTE!</button>
+      </li>
+    </ul>
+    <button class="link" class="newoption">Write In a Candidate</button>
+    <form id="addoption" action="post">
+      <input name="option" type="text" value=""/>
+    </form>
+  </body>
+</html>

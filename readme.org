@@ -10,13 +10,14 @@
  - [X] As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)
  - [X] As an authenticated user, if I don't like the options on a poll, I can create a new option.
 
+
 ** User Permissions
 *** Any user can
- - view a list of all polls
-   - and their outcomes
- - view a single poll
-   - and a chart of its outcome
-   - vote
+  - view a list of all polls
+    - and their outcomes
+  - view a single poll
+    - and a chart of its outcome
+    - vote
 *** An authenticated user can
  - create and save a poll
    - with multiple options
@@ -28,6 +29,7 @@
  - view a single poll
    - vote on that poll
    - create a new option
+
 
 ** M. V. C.
 *** Views

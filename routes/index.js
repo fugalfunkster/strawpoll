@@ -59,4 +59,15 @@ module.exports = function(app, passport) {
       res.redirect('/login');
     });
 
+  app.route('/list')
+    .get(function(req, res) {
+      res.render('list.ejs');
+    });
+
+  app.route('/single')
+    .get(function(req, res) {
+      res.render('single.ejs');
+    });
+
+
 };
