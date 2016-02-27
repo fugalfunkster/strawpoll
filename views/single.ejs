@@ -6,23 +6,29 @@
     <title>Name of the Poll</title>
   </head>
   <body>
-    <nav>
-      <a class="link" href="/login">Login</a>
-      <a class="link" href="/">Home</a>
-      <a class="link" href="/list">My Polls</a>
-    </nav>
+    <a href="/login">
+      <button class="link">Login</button>
+    </a>
+    <a href="/">
+      <button class="link">Home</button>
+    </a>
+    <a href="/list">
+      <button class="link">Polls</button>
+    </a>
     <h1>Name of the Poll</h1>
     <div class="visualization">
     </div>
-    <ul class="listofoptions">
-      <li class="option">
-        <p>Option</p>
-        <button class="link" class="vote">VOTE!</button>
-      </li>
-    </ul>
-    <button class="link" class="newoption">Write In a Candidate</button>
-    <form id="addoption" action="post">
-      <input name="option" type="text" value=""/>
-    </form>
+    <div class="listofoptions">
+      <div class="option">
+        <p class="option">Option</p>
+        <button class="link option" class="vote">VOTE!</button>
+      </div>
+    </div>
+    <div class="add">
+      <form id="addoption" action="post">
+        <input class="option" name="option" type="text" value="Write In?"/>
+        <button type="submit" class="link option vote">VOTE!</button>
+      </form>
+    </div>
   </body>
 </html>

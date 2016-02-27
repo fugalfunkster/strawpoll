@@ -12,7 +12,7 @@ a {
     text-decoration: none
 }
 
-input {
+.login {
     border: solid gray 2px;
     font-size: 1.6em;
     padding: 10px;
@@ -22,24 +22,24 @@ input {
     width: 100%;
 }
 
-input:first-child {
+.login:first-child {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: none;
 }
 
-input:last-child {
+.login:last-child {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
 .submit, .link {
     border: solid gray 2px;
-    font-size: 1.4em;
+    font-size: 1em;
     padding: 5px;
     background-color: white;
     border-radius: 5px;
-    height: 55px;
+    height: 35px;
     width: 110px;
     margin: 10px auto 0px auto;
     cursor: pointer;
@@ -63,6 +63,29 @@ input:last-child {
     vertical-align: middle;
 }
 
-#list .poll {
-    background-color: white
+.poll {
+    background-color: lightblue;
+    height: 60px;
+    border-radius: 5px;
 }
+
+.single {
+    float: right;
+    margin: 12px 10px auto 0px;
+}
+
+.name {
+    font-size: 1.4em;
+}
+
+.name, .option{
+    display: inline-block;
+    margin: 16px 0px 0px 20px;
+}
+
+.visualization {
+    height: 500px;
+    width: 500px;
+    background-color: lightblue;
+}
+
