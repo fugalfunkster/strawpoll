@@ -7,25 +7,28 @@
 
 <body>
 
-    <a href="/login">
-        <button class="link">Login</button>
-    </a>
+    <div class="nav">
+      <span>Strawpoll</span>
+      <a href="/login">Login</a>
+      <a href="/">Home</a>
+    </div>
     
-        <!-- show any messages that come back with authentication -->
-        <% if (message.length > 0) { %>
-            <div class="error"><%= message %></div>
-        <% } %>
-    
-        <!-- SIGNUP FORM -->
-        <form class="auth" action="/signup" method="post">
-            <div class="inputs">
-                <input type="text" class="login" name="email" placeholder="Email"> 
-                <br/>
-                <input type="password" class="login" name="password" placeholder="Password">
-            </div>
-            <button type="submit" class="submit">Signup</button>
-        </form>
-
+    <div class="meat">
+      <h1>Signup</h1>  
+      <!-- SIGNUP FORM -->
+      <form class="auth" action="/signup" method="post">
+          <div class="inputs">
+              <input type="text" class="login" name="email" placeholder="Email"> 
+              <br/>
+              <input type="password" class="login" name="password" placeholder="Password">
+          </div>
+          <button type="submit" class="submit">Submit</button>
+      </form>
+      <!-- show any messages that come back with authentication -->
+      <% if (message.length > 0) { %>
+          <div class="error"><%= message %></div>
+      <% } %>
+    </div>
     
 </body>
 </html>

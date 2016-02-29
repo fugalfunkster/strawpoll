@@ -14,8 +14,9 @@ module.exports = function(app, passport) {
   }
 
   app.route('/')
-    .get(isLoggedIn, function(req, res) {
-      res.sendFile(path + '/views/index.html');
+    .get(function(req, res) {
+      var user = req.isAuthenticated();
+      res.render('index.ejs', {user: user});
     });
 
   app.route('/login')
@@ -59,15 +60,20 @@ module.exports = function(app, passport) {
       res.redirect('/login');
     });
 
-  app.route('/list')
-    .get(function(req, res) {
-      res.render('list.ejs');
+  app.route('/mypolls')
+    .get(isLoggedIn, function(req, res) {
+      res.render('mypolls.ejs', {user: req.user.local.email});
+    });
+
+  app.route('/new')
+    .get(isLoggedIn, function(req, res) {
+      res.render('new.ejs', {user: req.user.local.email});
     });
 
   app.route('/single')
     .get(function(req, res) {
-      res.render('single.ejs');
+      var user = req.isAuthenticated();
+      res.render('single.ejs', {user: user});
     });
-
 
 };

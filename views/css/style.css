@@ -1,67 +1,54 @@
 body {
     background-color: cornsilk;
+    margin: 0px;
 }
 
-.auth {
-    position: relative;
-    width: 300px;
-    margin: 0 auto;
-}
+/* NAV BAR */
 
-a {
-    text-decoration: none
-}
-
-.login {
-    border: solid gray 2px;
-    font-size: 1.6em;
-    padding: 10px;
-}
-
-.inputs {
-    width: 100%;
-}
-
-.login:first-child {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom: none;
-}
-
-.login:last-child {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.submit, .link {
-    border: solid gray 2px;
-    font-size: 1em;
-    padding: 5px;
+.nav {
     background-color: white;
-    border-radius: 5px;
-    height: 35px;
-    width: 110px;
-    margin: 10px auto 0px auto;
-    cursor: pointer;
+    max-width: 750px;
+    margin: auto;
+    border-radius: 0 0 5px 5px;
+    padding: 15px 5px 10px 5px;
 }
 
-#github {
-    display: inline-block;
-    border: solid gray 2px;
+.nav>span {
+    font-weight: bold;
+    font-size: 1.6em;
+    margin-left: 15px;
+}
+
+.nav>a {
     font-size: 1.4em;
-    padding: 5px;
-    background-color: gray;
-    border-radius: 5px;
-    width: 140px;
-    margin: 10px auto 0px auto;
-    cursor: pointer;
+    float: right;
+    margin: 0px 5px 0px 10px;
 }
 
-#github>a {
-    color: black;
-    text-decoration: none;
-    vertical-align: middle;
+/* MEAT AND POTATOES */
+
+.meat {
+    max-width: 750px;
+    margin: auto;
+    padding: 15px 5px 10px 5px;
 }
+
+.meat>h1 {
+    text-align: center;
+}
+
+.visualization {
+    height: 400px;
+    width: 400px;
+    background-color: lightblue;
+    float: left;
+}
+
+.listofoptions {
+    float: left;
+}
+
+/* SINGLE POLL VIEW */
 
 .poll {
     background-color: lightblue;
@@ -83,9 +70,64 @@ a {
     margin: 16px 0px 0px 20px;
 }
 
-.visualization {
-    height: 500px;
-    width: 500px;
-    background-color: lightblue;
+/* LOGIN AND SIGNUP */
+
+.auth {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.login {
+    border: solid gray 2px;
+    font-size: 1.6em;
+    padding: 10px;
+    width: 276px;
+}
+
+.login:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: none;
+}
+
+.login:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.submit {
+    background-color: white;
+    width: 300px;
+}
+
+.submit, #github {
+    border: solid gray 2px;
+    font-size: 1.4em;
+    padding: 10px;
+    margin: 10px auto 0px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#github {
+    background-color: gray;
+}
+
+#github>img {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+#github>a {
+    color: black;
+    text-decoration: none;
+    margin-left: 12px;
+    vertical-align: middle;
 }
 
