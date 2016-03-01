@@ -18,17 +18,46 @@
 
     <div class="meat">
       <h1>Create A Poll</h1>
-      <form action="/post">
-        <input name="" type="text" value="Name This Poll!"/>
-        <h2>Choices</h2>
-        <input name="" type="textarea" value="..."/></br>
-        <input name="" type="textarea" value="..."/></br>
-        <input name="" type="textarea" value="..."/></br>
-        <input name="" type="textarea" value="..."/></br>
-        <button>Add Another Option</button></br>
+      <form action="/new" method="POST">
+        <input name="title" type="text" value="Name This Poll!"/>
+        <div id="options">
+          <h2>Choices</h2>
+          <input name="options" type="textarea" value="..."/></br>
+          <input name="options" type="textarea" value="..."/></br>
+          <input name="options" type="textarea" value="..."/></br>
+          <input name="options" type="textarea" value="..."/></br>
+        </div>
+        <button id="addOption">Add Another Option</button></br>
         <button>Submit</button>
       </form>
     </div>   
 
   </body>
+  <script type="text/javascript">
+
+   function addOption(e) {
+
+     var newOption = document.createElement('input');
+     newOption.setAttribute('name', 'options');   
+     newOption.setAttribute('type', 'textarea');
+     newOption.setAttribute('value', '...');
+
+     var container = document.getElementById('options');
+     container.appendChild(newOption);
+     container.appendChild(document.createElement('br'));
+
+     if (e.preventDefault) {
+       e.preventDefault();
+     } else {
+       e.returnValue = false;
+     } 
+
+   }
+   
+   var button = document.getElementById('addOption');
+   button.addEventListener('click', function(e) {
+     addOption(e);
+   }, false);
+
+  </script>
 </html>

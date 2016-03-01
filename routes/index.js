@@ -2,6 +2,7 @@
 'use strict';
 
 var path = process.cwd();
+var pollController = require('../controllers/pollController');
 
 module.exports = function(app, passport) {
 
@@ -16,7 +17,9 @@ module.exports = function(app, passport) {
   app.route('/')
     .get(function(req, res) {
       var user = req.isAuthenticated();
-      res.render('index.ejs', {user: user});
+      pollController.viewPolls(null, null, function(polls) {
+        res.render('index.ejs', {user: user, polls: polls});
+      });
     });
 
   app.route('/login')
@@ -62,18 +65,30 @@ module.exports = function(app, passport) {
 
   app.route('/mypolls')
     .get(isLoggedIn, function(req, res) {
-      res.render('mypolls.ejs', {user: req.user.local.email});
+      pollController.viewPolls(req.user._id, null, function(myPolls) {
+        res.render('myPolls.ejs', {polls: myPolls});
+      });
     });
 
   app.route('/new')
     .get(isLoggedIn, function(req, res) {
+      console.log(req.user._id);
       res.render('new.ejs', {user: req.user.local.email});
+    })
+    .post(function(req, res) {
+      pollController.createNewPoll(req.user._id,
+                                   req.body.title,
+                                   req.body.options);
+      res.redirect('/');
     });
 
-  app.route('/single')
+  app.route('/single/:id')
     .get(function(req, res) {
       var user = req.isAuthenticated();
-      res.render('single.ejs', {user: user});
+      var id = req.params.id;
+      pollController.viewPolls(null, id, function(poll) {
+        res.render('single.ejs', {user: user, poll: poll[0]});
+      });
     });
 
 };

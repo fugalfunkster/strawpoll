@@ -3,7 +3,7 @@
 <html>
   <head>
     <link href="/views/css/style.css" rel="stylesheet" type="text/css">
-    <title>Name of the Poll</title>
+    <title><%= poll.title %></title>
   </head>
   <body>
 
@@ -22,18 +22,21 @@
     </div>
 
     <div class="meat">
-      <h1>Name of the Poll</h1>
+      <h1><%= poll.title %></h1>
       <div class="visualization"></div>
       <div class="listofoptions">
         <div class="option">
-          <p class="option">Option</p>
+        <% for(var i = 0; i < poll.options.length; i++) { %>
           <button class="link option" class="vote">VOTE!</button>
+          <p class="option"><%= poll.options[i].name %></p>
+          <br/>
+        <% } %>
         </div>
         <% if (user) { %>
           <div class="add">
             <form id="addoption" action="post">
-              <input class="option" name="option" type="text" value="Write In?"/>
               <button type="submit" class="link option vote">VOTE!</button>
+              <input class="option" name="option" type="text" value="Write In?"/>
             </form>
           </div>
         <% } %>

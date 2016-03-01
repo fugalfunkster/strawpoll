@@ -19,13 +19,14 @@
     <div class="meat">
       <h1>My Polls</h1>
       <div id="list">
+        <% for(var i=0; i < polls.length; i++) {%>
         <div class="poll">
-          <span class="name">Poll Name</span>
-          <button class="link single" id="edit">Edit</button>
-          <a href="/single">
+          <span class="name"><%= polls[i].title %></span>
+          <a href=<%= "/single/" + polls[i]._id %> >
             <button class="link single">View</button>
           </a>
         </div>
+        <% } %>
       </div>
     </div>
 
