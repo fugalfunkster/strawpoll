@@ -91,4 +91,19 @@ module.exports = function(app, passport) {
       });
     });
 
+  app.route('/vote')
+    .post(function(req, res) {
+      pollController.vote(req.body);
+      res.redirect('/');
+    });
+
+  app.route('/delete/:id')
+    .post(isLoggedIn, function(req, res) {
+      var pollId = req.params.id;
+      var userId = req.user._id;
+      pollController.deletePoll(pollId, userId, function() {
+        res.redirect('/mypolls');
+      });
+    });
+
 };

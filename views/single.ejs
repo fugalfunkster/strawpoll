@@ -24,24 +24,34 @@
     <div class="meat">
       <h1><%= poll.title %></h1>
       <div class="visualization"></div>
-      <div class="listofoptions">
-        <div class="option">
+      <form class="listofoptions" method="POST" action="/vote">
+        <input type="hidden" name="pollid" value=<%= "" +  poll._id %>>
         <% for(var i = 0; i < poll.options.length; i++) { %>
-          <button class="link option" class="vote">VOTE!</button>
+          <input type="radio" name="option" value=<%= "" +  poll.options[i]._id %>>
           <p class="option"><%= poll.options[i].name %></p>
           <br/>
         <% } %>
-        </div>
         <% if (user) { %>
-          <div class="add">
-            <form id="addoption" action="post">
-              <button type="submit" class="link option vote">VOTE!</button>
-              <input class="option" name="option" type="text" value="Write In?"/>
-            </form>
-          </div>
+          <input type="radio" name="option" value="writein">
+          <input id="writein" class="option" name="writein" type="text" value="Write In"/>
+          <br/>
         <% } %>
-      </div>
+        <button type="submit" class="link option vote">VOTE</button>
+      </form>
     </div>
 
   </body>
+  <script type="text/javascript">
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+       if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+         callback(xmlhttp.response);
+       }
+     }
+
+    xmlhttp.open('GET', '/<%= poll._id 5>', true);
+    xmlhttp.send(null);
+
+  </script>
 </html>

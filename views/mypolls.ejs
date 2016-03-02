@@ -24,6 +24,9 @@
           <span class="name"><%= polls[i].title %></span>
           <a href=<%= "/single/" + polls[i]._id %> >
             <button class="link single">View</button>
+            <form method="POST" action=<%= "/delete/" + polls[i]._id %>>
+              <button type="submit" class="link single" id="delete">Delete</button>
+            </form>
           </a>
         </div>
         <% } %>
@@ -31,4 +34,5 @@
     </div>
 
   </body>
+
 </html>
