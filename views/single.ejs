@@ -4,6 +4,7 @@
   <head>
     <link href="/views/css/style.css" rel="stylesheet" type="text/css">
     <title><%= poll.title %></title>
+    <script type="text/javascript" src="/views/js/flotr2.min.js"></script>
   </head>
   <body>
 
@@ -23,7 +24,7 @@
 
     <div class="meat">
       <h1><%= poll.title %></h1>
-      <div class="visualization"></div>
+      <div class="visualization" id="chart"></div>
       <form class="listofoptions" method="POST" action="/vote">
         <input type="hidden" name="pollid" value=<%= "" +  poll._id %>>
         <% for(var i = 0; i < poll.options.length; i++) { %>
@@ -40,18 +41,20 @@
       </form>
     </div>
 
+    <script type="text/javascript">
+     var xhr = new XMLHttpRequest();
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          callback(xhr.response);
+        }
+      };
+
+      xhr.open('GET', '/<%= poll._id %>', true);
+      xhr.send();
+     
+    </script>
+    <script type="text/javascript" src="/views/js/ajaxGraph.js"></script>
+
   </body>
-  <script type="text/javascript">
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.onreadystatechange = function() {
-       if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-         callback(xmlhttp.response);
-       }
-     }
-
-    xmlhttp.open('GET', '/<%= poll._id 5>', true);
-    xmlhttp.send(null);
-
-  </script>
 </html>

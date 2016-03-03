@@ -91,6 +91,14 @@ module.exports = function(app, passport) {
       });
     });
 
+  app.route('/:id')
+    .get(function(req, res) {
+      var id = req.params.id;
+      pollController.viewPolls(null, id, function(poll) {
+        res.send(poll);
+      });
+    });
+
   app.route('/vote')
     .post(function(req, res) {
       pollController.vote(req.body);
