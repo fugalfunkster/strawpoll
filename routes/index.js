@@ -94,9 +94,12 @@ module.exports = function(app, passport) {
   app.route('/:id')
     .get(function(req, res) {
       var id = req.params.id;
+      if (id == "favicon.ico") {
+      } else {
       pollController.viewPolls(null, id, function(poll) {
         res.send(poll);
       });
+      }
     });
 
   app.route('/vote')

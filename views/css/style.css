@@ -45,6 +45,22 @@ body {
 
 .listofoptions {
     float: left;
+    margin: 15px;
+}
+
+/* LIST VIEW */
+
+.delete {
+    display: inline-block;
+    float: right;
+}
+
+.delete>button {
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    margin-top: 9px;
+    
 }
 
 /* SINGLE POLL VIEW */
