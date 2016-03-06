@@ -1,9 +1,9 @@
 * Straw Poll
 
-** ToDo List [2/6]
+** ToDo List [3/6]
 - [X] Write Micro Library for AJAX requests
 - [X] Wire up front end visualization
-- [ ] Implement twitter sharing
+- [X] Implement twitter sharing
 - [ ] Simplify Routes
 - [ ] Simplify Controllers
 - [ ] Ammend and Simplify CSS

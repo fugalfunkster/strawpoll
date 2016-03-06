@@ -29,7 +29,7 @@ app.set('view engine', 'ejs');
 app.use('/views', express.static(process.cwd() + '/views'));
 
 app.use(session({
-  secret: "speakfriendandenter",
+  secret: 'speakfriendandenter',
   resave: false,
   saveUninitialized: false
 }));
@@ -40,6 +40,6 @@ app.use(flash());
 
 routes(app, passport);
 
-app.listen(port, function(){
+app.listen(port, function() {
   console.log('Listening on port ' + port + '...');
 });
