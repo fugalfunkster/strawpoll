@@ -6,8 +6,10 @@ This full-stack app allows users to create polls, share their polls on twitter, 
 
 ** Installation and Demonstration
 
-This app is no longer deployed, and this repo does not contain a required .env file.
-Github OAuth keys are required to run this app. I can spin this up on Cloud9 by request.
+This app is currently deployed at: https://strawpoll-fugalfunkster.c9users.io/
+
++This app is no longer deployed, and this repo does not contain a required .env file.
+Github OAuth keys are required to run this app. I can spin this up on Cloud9 by request.+
 
 ** Dependencies
 - Node.js
