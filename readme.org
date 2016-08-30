@@ -1,25 +1,40 @@
 * Straw Poll
 
-** ToDo List [3/6]
-- [X] Write Micro Library for AJAX requests
-- [X] Wire up front end visualization
-- [X] Implement twitter sharing
-- [ ] Simplify Routes
-- [ ] Simplify Controllers
-- [ ] Ammend and Simplify CSS
+** Description
+
+This full-stack app allows users to create polls, share their polls on twitter, vote for their favorite option, add their own options, and delete their own polls. I built the back-end with Node, Express, and MongoDB/Mongoose. The front-end uses Flotr, a lightweight chart library, to visualize poll results. I used Passport for user authentication and authorization. 
+
+** Installation and Demonstration
+
+This app is no longer deployed, and this repo does not contain a required .env file.
+Github OAuth keys are required to run this app. I can spin this up on Cloud9 by request.
+
+** Dependencies
+- Node.js
+- Express
+- ejs - templating engine
+- MongoDB / Mongoose
+- Passport
+- Flotr2 - data visualization library
+- see also: package.json
 
 
-** Objective: Build a full stack JavaScript app that is functionally similar to this: https://fcc-voting-arthow4n.herokuapp.com/ and deploy it to Heroku. [1/8]
+** Todo List [0/2]
+- [ ] refactor routes and controllers
+- [ ] refactor styles
+
+
+** Objective: Build a full stack JavaScript app that is functionally similar to this: https://fcc-voting-arthow4n.herokuapp.com/ and deploy it to Heroku. [8/8]
  - [X] As an authenticated user, I can keep my polls and come back later to access them.
- - [ ] As an authenticated user, I can share my polls with my friends.
- - [ ] As an authenticated user, I can see the aggregate results of my polls.
+ - [X] As an authenticated user, I can share my polls with my friends.
+ - [X] As an authenticated user, I can see the aggregate results of my polls.
  - [X] As an authenticated user, I can delete polls that I decide I don't want anymore.
  - [X] As an authenticated user, I can create a poll with any number of possible items.
  - [X] As an unauthenticated or authenticated user, I can see and vote on everyone's polls.
- - [ ] As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)
+ - [X] A an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)
  - [X] As an authenticated user, if I don't like the options on a poll, I can create a new option.
 
-   
+  
 ** User Permissions
 *** Any user can
   - view a list of all polls
